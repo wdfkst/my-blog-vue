@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
     <!-- 内容上层部分 -->
     <el-container class="container">
       <div class="carousel">
@@ -41,7 +41,7 @@
                 <h3>{{ article.title }}</h3>
                 <span>{{ article.content }}</span>
               </div>
-              <div>
+              <div class="image-container">
                 <img :src="article.image" />
               </div>
             </div>
@@ -73,12 +73,30 @@
               </div>
             </div>
           </el-card>
+
         </div>
         <div class="cards2">
-          <el-card class="list_card2" shadow="hover">
 
+          <el-card class="list_card2" shadow="hover">
+            <div class="div1">
+              <img :src="require('@/assets/img/type.png')" />
+              <span>博客信息</span>
+            </div>
+            <div class="div2">
+              <ul>
+                <li><img :src="require('@/assets/img/article.png')" />文章数目</li>
+                <li><img :src="require('@/assets/img/ps.png')" />评论数量</li>
+                <li><img :src="require('@/assets/img/ps.png')" />运行时常</li>
+                <li><img :src="require('@/assets/img/ps.png')" />访客人数</li>
+              </ul>
+            </div>
           </el-card>
         </div>
+
+      </div>
+      <div class="footer-page">
+        <el-pagination background layout="prev, pager, next" :total="1000">
+        </el-pagination>
       </div>
     </el-container>
   </div>
@@ -173,11 +191,9 @@ export default {
 </script>
 <style lang="scss"  scoped>
 .container {
+  display: flex;
   /* 垂直分布 */
   flex-direction: column;
-  width: 100%;
-  height: 100%;
-
 }
 
 .carousel {
@@ -258,7 +274,7 @@ export default {
 .content {
   display: flex;
   width: 100%;
-  height: 1000px;
+  // height: 1000px;
 
 }
 
@@ -285,8 +301,23 @@ export default {
   }
 }
 
-.article2 {
 
+.image-container {
+  width: 200px; /* 设置容器宽度 */
+  overflow: hidden; /* 隐藏超出容器部分的图片 */
+    border-radius: 5px;
+}
+.image-container img {
+  width: 100%; /* 图片初始大小 */
+  transition: transform 0.3s ease; /* 平滑变化 */
+
+}
+ 
+.image-container:hover img {
+  transform: scale(1.2); /* 鼠标悬停时放大1.2倍 */
+
+}
+.article2 {
   width: 100%;
   display: flex;
   margin-top: 10px;
@@ -346,7 +377,7 @@ export default {
   width: 300px;
   margin-left: 10px;
   background-color: cadetblue;
-  height: 100%;
+  height: 700px;
 }
 
 .list_card {
@@ -357,6 +388,47 @@ export default {
 }
 
 .list_card2 {
-  height: 200px;
+  height: 400px;
+  display: flex;
+
+  .div1 {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+
+  }
+
+  .div2 {
+    ul {
+      list-style-type: none;
+      /* 可以设置为 circle, square, none 等 */
+      margin: 10px;
+      /* 整个列表的外边距 */
+      padding: 0;
+      /* 整个列表的内边距 */
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      width:240px;
+      margin-bottom: 20px;
+      /* 每个列表项的下边距 */
+      padding: 5px;
+      /* 每个列表项的内边距 */
+      background-color: #f0f0f0;
+      /* 背景颜色 */
+    }
+  }
 }
-</style>
+
+.footer-page {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}</style>

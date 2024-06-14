@@ -1,5 +1,10 @@
 <template>
-  <el-footer>© 2024 My Blog</el-footer>
+  <el-footer class="el-footer">
+   <div> © 2024 My Blog</div>
+  
+  
+  </el-footer>
+  
 </template>
 
 <script>
@@ -8,18 +13,15 @@ export default {
 };
 </script>
 
-<style scoped>
-.el-footer {
-  background-color: #b3c0d1;
-  text-align: center;
-  line-height: 60px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
+<style  scoped>
+.el-footer{
+  color: rgb(17, 16, 16);
+  background-color: #ffffff;
   width: 100%;
-  /* background-color: #333;  */
-   color: white;
   text-align: center;
-
+  display: flex;
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  margin-top: auto; /* 确保它在页面底部 */
 }
 </style>

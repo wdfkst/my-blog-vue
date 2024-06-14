@@ -2,14 +2,21 @@
   <el-header class="blog-header">
     <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
       <div class="logo">
-        <el-image style="width: 50px; height:50px" :src="url" />
+        <img :src="url" />
+      </div>
 
-    </div>
-      <el-menu-item index="1"> 
-        <el-image style="width: 30px; height:30px" :src="require('@/assets/home.png')" />
-        <router-link to="/">主页</router-link>
+      <el-menu-item index="1">
+
+        <router-link to="/"> <el-image style="width: 30px; height:30px"
+            :src="require('@/assets/home.png')" />主页</router-link>
       </el-menu-item>
-      <el-menu-item index="2"><router-link to="/about">次页</router-link></el-menu-item>
+      <el-menu-item index="2">
+        <router-link to="/about">次页</router-link>
+      </el-menu-item>
+      <el-menu-item index="3">
+        <router-link to="/login">登录</router-link>
+      </el-menu-item>
+
     </el-menu>
   </el-header>
 </template>
@@ -20,7 +27,7 @@ export default {
   data() {
     return {
       activeIndex: '1',
-      url:require('@/assets/wzlogo.png'),
+      url: require('@/assets/logo.png'),
     };
   },
   methods: {
@@ -31,8 +38,7 @@ export default {
 };
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
 .blog-header {
 
   position: fixed;
@@ -42,15 +48,18 @@ export default {
   background-color: #fff;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
   height: 80px;
-  line-height: 80px;
+
   /* 显示最高层保证不被覆盖 */
-  z-index: 10000;
-  
+  z-index: 1000;
+
 }
-.el-menu-demo{
-  width: 1500px;
-  /* background-color: antiquewhite; */
-  margin-left: 200px;
+
+.el-menu-demo {
+  display: flex;
+  align-items: center;
+  /* 垂直居中 */
+  justify-content: center;
+  /* 水平居中 */
 
 }
 
@@ -58,6 +67,11 @@ export default {
   display: flex;
   align-items: center;
   margin-right: 20px;
+
+  img {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .el-menu-demo {
@@ -65,10 +79,16 @@ export default {
   align-items: center;
   /* 将其拉伸到最大可用空间 */
   flex-grow: 1;
+  text-decoration: none;
+}
+
+.page {
+  display: flex;
+  margin-left: 100px;
+  text-decoration: none;
 }
 
 a {
-  text-decoration: none; /* 取消所有链接的下划线 */
-}
-
-</style>
+  text-decoration: none;
+  /* 取消所有链接的下划线 */
+}</style>

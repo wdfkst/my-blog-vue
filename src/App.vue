@@ -1,9 +1,9 @@
 <template>
-  <el-container>
+  <div class="container">
     <BlogHeader />
-    <router-view class="route" />
+      <router-view class="route" />
     <BlogFooter />
-  </el-container>
+  </div>
 </template>
 
 <script>
@@ -18,7 +18,7 @@ export default {
 };
 </script>
 
-<style>
+<style >
 @font-face {
   /* font-family: "阿里妈妈数黑体 Bold";font-weight: 700;src: url("//at.alicdn.com/wf/webfont/uUDQ0UryM15V/pRgAmw2z7S0B.woff2") format("woff2"),
   url("//at.alicdn.com/wf/webfont/uUDQ0UryM15V/ZVnVSqr0fL7o.woff") format("woff");
@@ -30,14 +30,19 @@ export default {
   /* 字体文件的路径和格式 */
 }
 
+.container{
+  display: flex;
+  flex-direction: column;
+
+}
 
 .route {
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
   width: 60%;
-  /* background-color: #ffffff;
-  box-shadow: 0 0 3px #92e7e7; */
+  display: flex;
+  flex-direction: column;
 }
 
 body,
@@ -46,8 +51,8 @@ html,
   font-family: 'AliFont', Arial, sans-serif;
   margin: 0;
   background-color: #f7f7f7;
- display: flex;
+  display: flex;
   flex-direction: column;
-
 }
+
 </style>
