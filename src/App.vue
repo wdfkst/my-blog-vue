@@ -15,6 +15,9 @@ export default {
     BlogHeader,
     BlogFooter,
   },
+  mounted() {
+    console.log("App",this);
+  }
 };
 </script>
 
@@ -42,7 +45,7 @@ export default {
   margin-right: auto;
   width: 60%;
   display: flex;
-  flex-direction: column;
+
 }
 
 body,

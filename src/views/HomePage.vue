@@ -376,7 +376,7 @@ export default {
 .cards2 {
   width: 300px;
   margin-left: 10px;
-  background-color: cadetblue;
+  // background-color: cadetblue;
   height: 700px;
 }
 

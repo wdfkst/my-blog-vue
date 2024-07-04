@@ -16,7 +16,9 @@
       <el-menu-item index="3">
         <router-link to="/login">登录</router-link>
       </el-menu-item>
-
+      <el-menu-item index="4" style="background-color: aqua;">
+        <span>{{ this.$store.state.email }}</span>
+      </el-menu-item>
     </el-menu>
   </el-header>
 </template>
@@ -28,7 +30,10 @@ export default {
     return {
       activeIndex: '1',
       url: require('@/assets/logo.png'),
+      email:'22222',
     };
+  },
+  mounted() {
   },
   methods: {
     handleSelect(key) {
@@ -50,7 +55,7 @@ export default {
   height: 80px;
 
   /* 显示最高层保证不被覆盖 */
-  z-index: 1000;
+  z-index: 10;
 
 }
 
